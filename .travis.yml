@@ -1,8 +1,8 @@
 branches:
   only:
     - main
-before_install:
- - chmod +x gradlew
-script:
-  - cd demo-k8s-pv-writer
-  - ./gradlew clean build
+before_script:
+  - chmod +x ./demo-k8s-pv-writer/gradlew
+  - chmod +x ./boot.sh
+script: 
+  - bash boot.sh
