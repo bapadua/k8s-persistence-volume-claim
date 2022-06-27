@@ -1,0 +1,7 @@
+branches:
+  only:
+    - main
+
+script:
+  - cd demo-k8s-pv-writer
+  - ./gradlew clean build
