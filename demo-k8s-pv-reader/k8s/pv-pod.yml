@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pv-reader-pod
+spec:
+  volumes:
+    - name: demo-pv-storage
+      persistentVolumeClaim:
+        claimName: demo-pv-claim
+  containers:
+    - name: demo-pv-reader-container
+      image: bapadua/demo-pv-reader:latest
+      ports:
+        - containerPort: 8082
+          name: "demo-pv-reader"
+      volumeMounts:
+        - mountPath: "/mnt/tmp"
+          name: demo-pv-storage

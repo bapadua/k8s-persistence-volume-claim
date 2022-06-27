@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  rabbitmq3:
+    container_name: "local-rabbitmq"
+    image: rabbitmq:3.8-management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      - RABBITMQ_DEFAULT_VHOST:localvhost
+    ports:
+      - '5672:5672'
+      - '15672:15672'
